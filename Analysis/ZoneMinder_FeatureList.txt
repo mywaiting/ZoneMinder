@@ -1,0 +1,65 @@
+﻿ZoneMinder 功能简述:
+======================
+
+功能列表:
+
+    * Runs on any Linux distribution!
+        *在任何Linux发行版上运行！
+        
+    * Supports video, USB and network cameras.
+        *支持视频，USB和网络摄像机。
+        
+    * Support Pan/Tilt/Zoom cameras, extensible to add new control protocols.
+        *支持平移/倾斜/变焦摄像机，可扩展增加新的控制协议。
+        
+    * Built on standard tools, C++, perl and PHP.
+        *内置的，的C + +，Perl和PHP的标准工具。
+        
+    * Uses high performance MySQL database.
+        *采用高性能的MySQL数据库。
+        
+    * High performance independent video capture and analysis daemons allowing high failure redundancy.
+        *高性能独立的视频采集和分析守护程序允许高失败冗余。
+        
+    * Multiple Zones (Regions Of Interest) can be defined per camera. Each can have a different sensitivity or be ignored altogether.
+        *（兴趣地区）可以定义多个区域每台摄像机。每个人都可以有不同的敏感性或完全被忽略。
+        
+    * Large number of configuration options allowing maximum performance on any hardware.
+        *大数量的配置，使在任何硬件的最大性能选项。
+        
+    * User friendly web interface allowing full control of system or cameras as well as live views and event replays.
+        *用户友好的网络接口，使系统或相机以及实时视图和事件回放的完全控制。
+        
+    * Supports live video in mpeg video, multi-part jpeg and stills formats.
+        *支持实时的MPEG视频，多部分的JPEG格式的视频和剧照。
+        
+    * Supports event replay in mpeg video, multi-part jpeg, stills formats, along with statistics detail.
+        *支持以MPEG随着统计详细视频，多部分的JPEG，剧照格式，事件的重演。
+        
+    * User defined filters allowing selection of any number of events by combination of characteristics in any order.
+        *用户定义的过滤器，允许按任意顺序组合特征的任何事件数的选择。
+        
+    * Event notification by email or SMS including attached still images or video of specific events by filter.
+        *通过电子邮件或短信事件通知包括附加静止图像或视频通过过滤特定事件。
+        
+    * Automatic uploading of matching events to external FTP storage for archiving and data security.
+        *自动上传存档的匹配和数据安全事件，外部FTP存储。
+        
+    * Includes bi-directional X.10 (home automation protocol) integration allowing X.10 signals to control when video is captured and for motion detection to trigger X.10 devices.
+        *包括双向x.10（家庭自动化协议）的集成，允许x.10信号来控制当视频捕获及运动检测触发x.10设备。
+    
+    * Highly partitioned design allow other hardware interfacing protocols to be added easily for support of alarm panels etc.
+        *高度分区允许其他硬件接口设计的报警面板等的支持协议很容易地添加
+        
+    * Multiple users and user access levels Multi-language support with many languages already included Full control script support allowing most tasks to be automated or added to other applications.
+        *多用户和多用户访问级别，语言，多语言的支持，已经包含了完整的控制脚本支持，让大多数任务是自动或添加到其他的应用程序
+    
+    * Support external triggering by 3rd party applications or equipment.
+        *支持外部触发由第三方应用程序或设备。
+        
+    * xHTML mobile/cellular phone access allowing access to common functions
+        * XHTML移动/蜂窝电话接入允许访问常用功能
+        
+    * iPhone interface available
+        * iPhone界面中提供
+    

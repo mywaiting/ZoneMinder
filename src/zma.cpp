@@ -33,6 +33,9 @@ int main( int argc, char *argv[] )
 		{0, 0, 0, 0}
 	};
 
+    /**
+        这里直接进入死循环
+    */
 	while (1)
 	{
 		int option_index = 0;
@@ -78,9 +81,15 @@ int main( int argc, char *argv[] )
 	snprintf( dbg_id_string, sizeof(dbg_id_string), "m%d", id );
 
 	zmDbgInit( "zma", dbg_id_string, 0 );
-
+    
+    /**
+        载入配置信息
+    */
 	zmLoadConfig();
 
+    /**
+        实例化 Monitor类 
+    */
 	Monitor *monitor = Monitor::Load( id, true, Monitor::ANALYSIS );
 
 	if ( monitor )
@@ -105,7 +114,7 @@ int main( int argc, char *argv[] )
 			sigprocmask( SIG_BLOCK, &block_set, 0 );
 			if ( !monitor->Analyse() )
 			{
-				usleep( monitor->Active()?ZM_SAMPLE_RATE:ZM_SUSPENDED_RATE );
+				usleep( monitor->Active() ? ZM_SAMPLE_RATE : ZM_SUSPENDED_RATE );
 			}
 			if ( zm_reload )
 			{

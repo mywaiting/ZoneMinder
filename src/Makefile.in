@@ -35,8 +35,12 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-bin_PROGRAMS = zmc$(EXEEXT) zma$(EXEEXT) zmu$(EXEEXT) zms$(EXEEXT) \
-	zmf$(EXEEXT) zmfix$(EXEEXT)
+bin_PROGRAMS = zmc$(EXEEXT) \
+    zma$(EXEEXT) \
+    zmu$(EXEEXT) \
+    zms$(EXEEXT) \
+	zmf$(EXEEXT) \
+    zmfix$(EXEEXT)
 subdir = src
 DIST_COMMON = $(noinst_HEADERS) $(srcdir)/Makefile.am \
 	$(srcdir)/Makefile.in $(srcdir)/zm_config.h.in

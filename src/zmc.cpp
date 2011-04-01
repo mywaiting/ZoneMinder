@@ -17,7 +17,14 @@
 void Usage()
 {
 	fprintf( stderr, "zmc -d <device_path> or -r <proto> -H <host> -P <port> -p <path> or -f <file_path> or -m <monitor_id>\n" );
-
+    
+    /**
+        -d = device  摄像驱动设备<本地摄像设备>
+        -r = remote  远程摄像设备<需要提供 protocol, host, port, path>
+        -f = file    本地存储的文件<需要提供file path>
+        -m = monitor 来源摄像设备 
+    
+    */
 	fprintf( stderr, "Options:\n" );
 	fprintf( stderr, "  -d, --device <device_path>               : For local cameras, device to access. E.g /dev/video0 etc\n" );
 	fprintf( stderr, "  -r <proto> -H <host> -P <port> -p <path> : For remote cameras\n" );
@@ -41,7 +48,7 @@ int main( int argc, char *argv[] )
 
 	static struct option long_options[] = {
 		{"device", 1, 0, 'd'},
-		{"protocol", 1, 0, 'r'},
+		{"protocol", 1, 0, 'r'}, /**  驱动协议 */
 		{"host", 1, 0, 'H'},
 		{"port", 1, 0, 'P'},
 	 	{"path", 1, 0, 'p'},
@@ -51,6 +58,9 @@ int main( int argc, char *argv[] )
 		{0, 0, 0, 0}
 	};
 
+    /**
+        进入死循环
+    */
 	while (1)
 	{
 		int option_index = 0;
@@ -137,22 +147,37 @@ int main( int argc, char *argv[] )
 
 	zmDbgInit( "zmc", dbg_id_string, 0 );
 
+    /**
+        载入配置信息
+    */
 	zmLoadConfig();
 
+    /**
+        Monitor 实例化类
+    */
 	Monitor **monitors = 0;
 	int n_monitors = 0;
 	if ( device[0] )
 	{
+        /**
+            本机的摄像设备
+        */
 		n_monitors = Monitor::LoadLocalMonitors( device, monitors, Monitor::CAPTURE );
 	}
 	else if ( host[0] )
 	{
 		if ( !port )
 			port = "80";
+        /**
+            远程摄像设备，根据 protocol 选择 HTTP、RTSP
+        */
 		n_monitors = Monitor::LoadRemoteMonitors( protocol, host, port, path, monitors, Monitor::CAPTURE );
 	}
 	else if ( file[0] )
 	{
+        /**
+            文件摄像
+        */
 		n_monitors = Monitor::LoadFileMonitors( file, monitors, Monitor::CAPTURE );
 	}
 	else

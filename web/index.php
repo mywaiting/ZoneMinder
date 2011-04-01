@@ -69,6 +69,10 @@ define( "ZM_SKIN_PATH", "skins/$skin" );
 $skinBase = array(); // To allow for inheritance of skins
 if ( !file_exists( ZM_SKIN_PATH ) )
     die( "Invalid skin '$skin'" );
+
+/**
+    包含文件
+*/
 require_once( ZM_SKIN_PATH.'/includes/init.php' );
 $skinBase[] = $skin;
 
@@ -82,6 +86,9 @@ if ( !isset($_SESSION['skin']) || isset($_REQUEST['skin']) )
     setcookie( "zmSkin", $skin );
 }
 
+/**
+    包含文件
+*/
 require_once( 'includes/config.php' );
 
 if ( ZM_OPT_USE_AUTH )
@@ -92,6 +99,9 @@ if ( ZM_OPT_USE_AUTH )
 else
     $user = $defaultUser;
 
+/**
+    包含文件
+*/
 require_once( 'includes/lang.php' );
 require_once( 'includes/functions.php' );
 
@@ -101,11 +111,17 @@ if ( isset($_REQUEST['view']) )
 if ( isset($_REQUEST['action']) )
     $action = validHtmlStr($_REQUEST['action']);
 
+/**
+    包含文件
+*/
 require_once( 'includes/actions.php' );
 
 foreach ( getSkinIncludes( 'skin.php' ) as $includeFile )
     require_once $includeFile;
 
+/**
+    包含文件
+*/
 if ( isset( $_REQUEST['request'] ) )
 {
     $request = validHtmlStr($_REQUEST['request']);

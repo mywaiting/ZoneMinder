@@ -1,7 +1,14 @@
 ﻿//
 // ZoneMinder Streaming Server, $Date: 2009-05-25 19:03:46 +0100 (Mon, 25 May 2009) $, $Revision: 2890 $
 // Copyright (C) 2001-2008 Philip Coombes
-//  
+//
+
+/**
+    ZoneMinder 流服务器
+    
+    常驻进程
+
+*/
 
 #include <sys/ipc.h>
 #include <sys/msg.h>
@@ -72,17 +79,63 @@ int main( int argc, const char *argv[] )
 	}
 	
 	zmDbgInit( "zms", "", 0 );
-
+    
+    /**
+        这是里面最常见的初始化动作
+    */
 	zmLoadConfig();
+    
+    /**
+        这两个函数在 zm_signal.cpp里面有定义
+        
+        zmSetDefaultTermHandler = zmSetTermHandler( (SigHandler *)zm_term_handler );
+        void zmSetTermHandler( SigHandler *handler )
+        {
+            sigset_t block_set;
+            sigemptyset( &block_set );
+            struct sigaction action, old_action;
 
+            action.sa_handler = (SigHandler *)handler;
+            action.sa_mask = block_set;
+            action.sa_flags = 0;
+            sigaction( SIGTERM, &action, &old_action );
+        }
+        
+        void zmSetDieHandler( SigHandler *handler )
+        {
+            sigset_t block_set;
+            sigemptyset( &block_set );
+            struct sigaction action, old_action;
+
+            action.sa_handler = (SigHandler *)handler;
+            action.sa_mask = block_set;
+            action.sa_flags = 0;
+
+            sigaction( SIGBUS, &action, &old_action );
+            sigaction( SIGSEGV, &action, &old_action );
+            sigaction( SIGABRT, &action, &old_action );
+            sigaction( SIGILL, &action, &old_action );
+            sigaction( SIGFPE, &action, &old_action );
+        }
+        
+        共定义了 种的 signal信号:
+            
+            typedef RETSIGTYPE (SigHandler)( int );
+            
+            // 终端挂起或者控制进程终止 
+            zmc_hup_handler
+            // 终止信号 
+            zmc_term_handler
+            zmc_die_handler
+    */
 	zmSetDefaultTermHandler();
 	zmSetDefaultDieHandler();
 
-        /**
-          取得Cgi-bin过来的QueryString
-          例如：
-          http://localhost:80/cgi-bin/nph-zms?string=123&format=jpeg
-        **/
+    /**
+      取得Cgi-bin过来的QueryString
+      例如：
+      http://localhost:80/cgi-bin/nph-zms?string=123&format=jpeg
+    **/
 	const char *query = getenv( "QUERY_STRING" );
 	if ( query )
 	{
@@ -245,7 +298,7 @@ int main( int argc, const char *argv[] )
 	if ( source == ZMS_MONITOR )
 	{
         /**
-          这里实例化了 MonitorStream 类
+          这里实例化了 MonitorStream 类 = stream
           然后设置各种的参数
         **/
         MonitorStream stream;
@@ -289,6 +342,9 @@ int main( int argc, const char *argv[] )
 	}
     else if ( source == ZMS_EVENT )
     {
+        /**
+            EventStream 实例化 = stream
+        */
         EventStream stream;
         stream.setStreamScale( scale );
         stream.setStreamReplayRate( rate );

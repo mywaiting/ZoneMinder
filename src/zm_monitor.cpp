@@ -34,6 +34,8 @@
     #include <sys/shm.h>
 #endif // ZM_MEM_MAPPED
 
+
+
 Monitor::MonitorLink::MonitorLink( int p_id, const char *p_name ) : id( p_id )
 {
     strncpy( name, p_name, sizeof(name) );
@@ -54,10 +56,12 @@ Monitor::MonitorLink::MonitorLink( int p_id, const char *p_name ) : id( p_id )
     connected = false;
 }
 
+
 Monitor::MonitorLink::~MonitorLink()
 {
     disconnect();
 }
+
 
 bool Monitor::MonitorLink::connect()
 {
@@ -189,6 +193,7 @@ bool Monitor::MonitorLink::disconnect()
     return( true );
 }
 
+
 bool Monitor::MonitorLink::isAlarmed()
 {
     if ( !connected )
@@ -198,6 +203,7 @@ bool Monitor::MonitorLink::isAlarmed()
     return( shared_data->state == ALARM );
 }
 
+
 bool Monitor::MonitorLink::inAlarm()
 {
     if ( !connected )
@@ -206,6 +212,7 @@ bool Monitor::MonitorLink::inAlarm()
     }
     return( shared_data->state == ALARM || shared_data->state == ALERT );
 }
+
 
 bool Monitor::MonitorLink::hasAlarmed()
 {
@@ -220,6 +227,7 @@ bool Monitor::MonitorLink::hasAlarmed()
     }
     return( false );
 }
+
 
 Monitor::Monitor(
     int p_id,
@@ -3335,11 +3343,11 @@ void MonitorStream::runStream()
         return;
     }
     /**
-        待查！！
+        这个 openComms() 在 zm_stream.cpp 里面有定义
     **/
     openComms();
     /**
-        待查！！
+        这个 checkInitialised() 在 zm_stream.cpp 里面有定义
     **/
     checkInitialised();
     /**

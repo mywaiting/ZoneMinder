@@ -27,6 +27,9 @@ bool StreamBase::loadMonitor( int monitor_id )
     return( true );
 }
 
+/**
+    检查是否已经 初始化完成
+*/
 bool StreamBase::checkInitialised()
 {
     if ( !monitor )
