@@ -1,9 +1,11 @@
-ZoneMinderÔ´´úÂë·ÖÎöÏîÄ¿
+ï»¿ZoneMinderæºä»£ç åˆ†æé¡¹ç›®
 =========================
 
-ZoneMinder¹Ù·½ÎÄµµ²Î¿´£ºhttp://www.zoneminder.com/wiki/index.php/Documentation
+ZoneMinderå®˜æ–¹æ–‡æ¡£å‚çœ‹ï¼šhttp://www.zoneminder.com/wiki/index.php/Documentation
 
 
-ÎÄ¼şÊ×´ÎCommitÔÚ 2011-03-30 20£º10 By mywaiting <"http://www/.mywaiting.com">
+æ–‡ä»¶é¦–æ¬¡Commitåœ¨ 2011-03-30 20ï¼š10 By mywaiting <"http://www/.mywaiting.com">
 
-ÎÄ¼şCommitÔÚ 2011-03-30 22:58 By mywaiting <"http://www/.mywaiting.com">
+æ–‡ä»¶Commitåœ¨ 2011-03-30 22:58 By mywaiting <"http://www/.mywaiting.com">
+
+æ–‡ä»¶åœ¨ 2011-04-05 11ï¼š45 åˆ†æå®Œæ¯•!
