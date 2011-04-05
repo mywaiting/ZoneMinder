@@ -1,4 +1,4 @@
-#!/usr/bin/perl -wT
+ï»¿#!/usr/bin/perl -wT
 #
 # ==========================================================================
 #
@@ -6,8 +6,8 @@
 # Copyright (C) 2001-2008 Philip Coombes
 #
 #
-# Õâ¸ö½Å±¾ÓÃÓÚstart »òÕß stop Õû¸ö ZoneMinderµÄÖ÷Òª°ü
-# ÒÔÊ¹µÃ¿ÉÒÔÔÊĞíÃüÁîĞĞÀ´¿ØÖÆ×Ô¶¯µÄÖØÆô»òÕßÖØÔØ
+# è¿™ä¸ªè„šæœ¬ç”¨äºstart æˆ–è€… stop æ•´ä¸ª ZoneMinderçš„ä¸»è¦åŒ…
+# ä»¥ä½¿å¾—å¯ä»¥å…è®¸å‘½ä»¤è¡Œæ¥æ§åˆ¶è‡ªåŠ¨çš„é‡å¯æˆ–è€…é‡è½½
 #
 
 use strict;
@@ -48,9 +48,9 @@ my $state;
 my $dbh = zmDbConnect();
 
 #
-# ½Å±¾Ê¹ÓÃ·½·¨:
+# è„šæœ¬ä½¿ç”¨æ–¹æ³•:
 # zmpkg.pl [command]
-# ÆäÖĞ command ¿ÉÒÔÊÇ start|stop|restart|status|logrot ÖĞµÄÈÎºÎÒ»¸ö
+# å…¶ä¸­ command å¯ä»¥æ˜¯ start|stop|restart|status|logrot ä¸­çš„ä»»ä½•ä¸€ä¸ª
 #
 #
 

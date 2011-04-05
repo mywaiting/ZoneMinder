@@ -1,11 +1,11 @@
-#!/usr/bin/perl -w
+ï»¿#!/usr/bin/perl -w
 #
 # ==========================================================================
 #
 # ZoneMinder Update Script, $Date: 2009-06-30 08:41:54 +0100 (Tue, 30 Jun 2009) $, $Revision: 2937 $
 # Copyright (C) 2001-2008 Philip Coombes
 #
-# Õâ¸ö½Å±¾¸ºÔğ¼ì²é ZoneMinderµÄ×îĞÂ°æ±¾....¾ÍÊÇ¸ºÔğ ZoneMinderµÄÉı¼¶Ê¹ÓÃµÄ....
+# è¿™ä¸ªè„šæœ¬è´Ÿè´£æ£€æŸ¥ ZoneMinderçš„æœ€æ–°ç‰ˆæœ¬....å°±æ˜¯è´Ÿè´£ ZoneMinderçš„å‡çº§ä½¿ç”¨çš„....
 #
 use strict;
 use bytes;

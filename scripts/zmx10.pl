@@ -1,11 +1,11 @@
-#!/usr/bin/perl -wT
+ï»¿#!/usr/bin/perl -wT
 #
 # ==========================================================================
 #
 # ZoneMinder X10 Control Script, $Date: 2009-06-08 10:11:56 +0100 (Mon, 08 Jun 2009) $, $Revision: 2908 $
 # Copyright (C) 2001-2008 Philip Coombes
 #
-# Õâ¸ö½Å±¾½«»á¿ØÖÆ»ùÓÚ X10½Ó¿ÚµÄ¼àÊÓ£¬²¢ÇÒ»á´¦Àí X10 signal
+# è¿™ä¸ªè„šæœ¬å°†ä¼šæ§åˆ¶åŸºäº X10æ¥å£çš„ç›‘è§†ï¼Œå¹¶ä¸”ä¼šå¤„ç† X10 signal
 #
 use strict;
 use bytes;

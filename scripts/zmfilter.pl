@@ -1,12 +1,12 @@
-#!/usr/bin/perl -wT
+ï»¿#!/usr/bin/perl -wT
 #
 # ==========================================================================
 #
 # ZoneMinder Event Filter Script, $Date: 2009-06-08 10:11:56 +0100 (Mon, 08 Jun 2009) $, $Revision: 2908 $
 # Copyright (C) 2001-2008 Philip Coombes
 #
-# Õâ¸ö½Å±¾²»¶Ï¼ÇÂ¼Ã¿¸ö¸ø¶¨µÄ monitor ´«µİ¹ıÀ´µÄ¼à¿ØÊÂ¼ş(events)
-# ²¢ÇÒµ÷ÓÃ¹ıÂËÆ÷(filter)È¥Æ¥ÅäÄÇ¸öÊÂ¼ş¿ÉÒÔÉ¾³ı»òÕßÉÏ´«
+# è¿™ä¸ªè„šæœ¬ä¸æ–­è®°å½•æ¯ä¸ªç»™å®šçš„ monitor ä¼ é€’è¿‡æ¥çš„ç›‘æ§äº‹ä»¶(events)
+# å¹¶ä¸”è°ƒç”¨è¿‡æ»¤å™¨(filter)å»åŒ¹é…é‚£ä¸ªäº‹ä»¶å¯ä»¥åˆ é™¤æˆ–è€…ä¸Šä¼ 
 #
 use strict;
 use bytes;
@@ -99,9 +99,9 @@ my $filter_parm = "";
 sub Usage
 {
 #
-# ½Å±¾Ê¹ÓÃ·½·¨£º
+# è„šæœ¬ä½¿ç”¨æ–¹æ³•ï¼š
 # zmfilter.pl [-f <filter name>,--filter=<filter name>]
-# ¼´Ö¸¶¨¿ªÆôÄÇ¸ö filter
+# å³æŒ‡å®šå¼€å¯é‚£ä¸ª filter
 #
     print( "
 Usage: zmfilter.pl [-f <filter name>,--filter=<filter name>]
