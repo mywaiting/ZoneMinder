@@ -5,25 +5,9 @@
 # ZoneMinder WatchDog Script, $Date: 2009-06-08 10:11:56 +0100 (Mon, 08 Jun 2009) $, $Revision: 2908 $
 # Copyright (C) 2001-2008 Philip Coombes
 #
-# This program is free software; you can redistribute it and/or
-# modify it under the terms of the GNU General Public License
-# as published by the Free Software Foundation; either version 2
-# of the License, or (at your option) any later version.
 #
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
-#
-# ==========================================================================
-#
-# This does some basic setup for ZoneMinder to run and then periodically
-# checks the fps output of the active daemons to check they haven't 
-# locked up. If they have then they are killed and restarted
+# 这个脚本将会为 ZoneMinder做一些基本的设置，然后周期性地检查每个活动输出流的 fps
+# 如果坚持到他们被锁定或者有问题，就kill掉他们的进程然后将它们重启
 #
 use strict;
 use bytes;

@@ -1,8 +1,5 @@
 #!/usr/bin/perl -wT
 #
-# ==========================================================================
-#
-# ==========================================================================
 #
 # This script continuously monitors the recorded events for the given
 # monitor and applies any filters which would delete and/or upload 

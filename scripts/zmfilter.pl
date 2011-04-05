@@ -5,25 +5,8 @@
 # ZoneMinder Event Filter Script, $Date: 2009-06-08 10:11:56 +0100 (Mon, 08 Jun 2009) $, $Revision: 2908 $
 # Copyright (C) 2001-2008 Philip Coombes
 #
-# This program is free software; you can redistribute it and/or
-# modify it under the terms of the GNU General Public License
-# as published by the Free Software Foundation; either version 2
-# of the License, or (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
-#
-# ==========================================================================
-#
-# This script continuously monitors the recorded events for the given
-# monitor and applies any filters which would delete and/or upload 
-# matching events
+# 这个脚本不断记录每个给定的 monitor 传递过来的监控事件(events)
+# 并且调用过滤器(filter)去匹配那个事件可以删除或者上传
 #
 use strict;
 use bytes;
@@ -115,6 +98,11 @@ my $filter_parm = "";
 
 sub Usage
 {
+#
+# 脚本使用方法：
+# zmfilter.pl [-f <filter name>,--filter=<filter name>]
+# 即指定开启那个 filter
+#
     print( "
 Usage: zmfilter.pl [-f <filter name>,--filter=<filter name>]
 Parameters are :-

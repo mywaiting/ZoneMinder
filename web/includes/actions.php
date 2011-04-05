@@ -886,6 +886,11 @@ if ( !empty($action) )
                     $ctrlCommand .= " --id=".$monitor['Id'];
 
                     // Can't connect so use script
+                    /**
+                        本函数执行输入 command 的外部程序或外部指令。
+                        它的返回字符串只是外部程序执行后返回的最后一行；
+                        若需要完整的返回字符串，可以使用 PassThru() 这个函数。
+                    */
                     $ctrlOutput = exec( escapeshellcmd( $ctrlCommand ) );
                 }
             }

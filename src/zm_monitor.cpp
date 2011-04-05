@@ -235,6 +235,9 @@ Monitor::Monitor(
     int p_function,
     bool p_enabled,
     const char *p_linked_monitors,
+    /**
+        下面的 p_camera 指向了 Camera类
+    */
     Camera *p_camera,
     int p_orientation,
     const char *p_event_prefix,
@@ -1759,7 +1762,10 @@ int Monitor::LoadLocalMonitors( const char *device, Monitor **&monitors, Purpose
 
         int cam_width = ((orientation==ROTATE_90||orientation==ROTATE_270)?height:width);
         int cam_height = ((orientation==ROTATE_90||orientation==ROTATE_270)?width:height);
-
+        
+        /**
+            这里载入了 Local_Camera
+        */
         Camera *camera = new LocalCamera(
             id,
             device,
@@ -3339,6 +3345,9 @@ void MonitorStream::runStream()
     if ( type == STREAM_SINGLE )
     {
         // Not yet migrated over to stream class
+        /**
+            monitor = new Monitor()
+        */
         monitor->SingleImage( scale );
         return;
     }

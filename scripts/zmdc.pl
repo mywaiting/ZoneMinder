@@ -5,27 +5,9 @@
 # ZoneMinder Daemon Control Script, $Date: 2009-06-08 10:11:56 +0100 (Mon, 08 Jun 2009) $, $Revision: 2908 $
 # Copyright (C) 2001-2008 Philip Coombes
 #
-# This program is free software; you can redistribute it and/or
-# modify it under the terms of the GNU General Public License
-# as published by the Free Software Foundation; either version 2
-# of the License, or (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
-#
-# ==========================================================================
-#
-# This script is the gateway for controlling the various ZoneMinder
-# daemons. All starting, stopping and restarting goes through here.
-# On the first invocation it starts up a server which subsequently
-# records what's running and what's not. Other invocations just 
-# connect to the server and pass instructions to it.
+# 这个脚本是控制 ZM各种守护进程的网关。所有的启动、停止和重启都会经过这里。
+# 第一次调用这个脚本的时候会启动一个server ，这个 server 会自动记录什么在运行，
+# 什么不在运行，接下来的其他调用只是连接到 server 并且传递指令而已。
 #
 use strict;
 use bytes;
@@ -76,7 +58,12 @@ my @daemons = (
 );
 
 sub Usage
-{   
+{
+#
+# 使用说明：
+# zmdc.pl <command> [daemon [options]]
+# 其中 Daemon可以是 上面的任何一个 
+# 
     print( "
 Usage: zmdc.pl <command> [daemon [options]]
 Parameters are :-
@@ -87,6 +74,9 @@ Parameters are :-
     exit( -1 );
 }
 
+#
+# 下面的代码记录并且传递了从shell 过来的命令行参数
+#
 my $command = shift @ARGV;
 if( !$command )
 {
@@ -131,6 +121,10 @@ foreach my $arg ( @ARGV )
 	}
 }
 
+
+#
+# 下面的代码创建了一个 socket server，接受传递过来的命令字
+#
 socket( CLIENT, PF_UNIX, SOCK_STREAM, 0 ) or Fatal( "Can't open socket: $!" );
 
 my $saddr = sockaddr_un( SOCK_FILE );
@@ -210,6 +204,10 @@ if ( !$server_up )
 		my $win = $rin;
 		my $ein = $win;
 		my $timeout = 0.1;
+        
+        #
+        # 这是个死循环，让 fork出来的 server 持续运行
+        #
 		while( 1 )
 		{
 			my $nfound = select( my $rout = $rin, undef, undef, $timeout );

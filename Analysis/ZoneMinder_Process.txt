@@ -1,0 +1,23 @@
+﻿#
+# 下面这个是 ZM启动时候的进程列表
+#
+ee201@ee201-segotep:~$ ps -ef | grep zm
+www-data  1816     1  0 20:08 ?        00:00:00 /usr/bin/perl -wT /usr/local/bin/zmdc.pl startup
+www-data  1840  1816  0 20:08 ?        00:00:00 /usr/bin/perl -wT /usr/local/bin/zmfilter.pl
+www-data  1843  1816  0 20:08 ?        00:00:00 /usr/bin/perl -wT /usr/local/bin/zmaudit.pl -c
+www-data  1846  1816  0 20:08 ?        00:00:00 /usr/bin/perl -wT /usr/local/bin/zmwatch.pl
+www-data  1848  1816  0 20:08 ?        00:00:00 /usr/bin/perl -w /usr/local/bin/zmupdate.pl -c
+www-data  1986  1816 41 20:14 ?        00:01:06 /usr/local/bin/zmc -m 1
+
+#
+# 下面这个是 ZM关闭时候的进程列表
+#
+ee201@ee201-segotep:~$ ps -ef | grep zm
+www-data  1816     1  0 20:08 ?        00:00:00 /usr/bin/perl -wT /usr/local/bin/zmdc.pl startup
+www-data  1840  1816  0 20:08 ?        00:00:00 /usr/bin/perl -wT /usr/local/bin/zmfilter.pl
+www-data  1843  1816  0 20:08 ?        00:00:00 /usr/bin/perl -wT /usr/local/bin/zmaudit.pl -c
+www-data  1986  1816 42 20:14 ?        00:02:18 /usr/local/bin/zmc -m 1
+www-data  2160  1091  0 20:19 ?        00:00:00 sh -c /usr/local/bin/zmpkg.pl stop 2>/dev/null >&- <&- >/dev/null
+www-data  2161  2160  2 20:19 ?        00:00:00 /usr/bin/perl -wT /usr/local/bin/zmpkg.pl stop
+www-data  2163  2161  3 20:19 ?        00:00:00 /usr/bin/perl -wT /usr/local/bin/zmdc.pl shutdown
+

@@ -5,25 +5,7 @@
 # ZoneMinder Update Script, $Date: 2009-06-30 08:41:54 +0100 (Tue, 30 Jun 2009) $, $Revision: 2937 $
 # Copyright (C) 2001-2008 Philip Coombes
 #
-# This program is free software; you can redistribute it and/or
-# modify it under the terms of the GNU General Public License
-# as published by the Free Software Foundation; either version 2
-# of the License, or (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
-#
-# ==========================================================================
-#
-# This script just checks what the most recent release of ZoneMinder is
-# at the the moment. It will eventually be responsible for applying and
-# configuring upgrades etc, including on the fly upgrades.
+# 这个脚本负责检查 ZoneMinder的最新版本....就是负责 ZoneMinder的升级使用的....
 #
 use strict;
 use bytes;

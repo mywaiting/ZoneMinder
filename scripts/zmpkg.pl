@@ -5,25 +5,11 @@
 # ZoneMinder Package Control Script, $Date: 2009-06-29 16:27:48 +0100 (Mon, 29 Jun 2009) $, $Revision: 2935 $
 # Copyright (C) 2001-2008 Philip Coombes
 #
-# This program is free software; you can redistribute it and/or
-# modify it under the terms of the GNU General Public License
-# as published by the Free Software Foundation; either version 2
-# of the License, or (at your option) any later version.
 #
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
+# 这个脚本用于start 或者 stop 整个 ZoneMinder的主要包
+# 以使得可以允许命令行来控制自动的重启或者重载
 #
-# You should have received a copy of the GNU General Public License
-# along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
-#
-# ==========================================================================
-#
-# This script is used to start and stop the ZoneMinder package primarily to
-# allow command line control for automatic restart on reboot (see zm script)
-#
+
 use strict;
 use bytes;
 
@@ -60,6 +46,13 @@ my $command = $ARGV[0];
 my $state;
 
 my $dbh = zmDbConnect();
+
+#
+# 脚本使用方法:
+# zmpkg.pl [command]
+# 其中 command 可以是 start|stop|restart|status|logrot 中的任何一个
+#
+#
 
 if ( !$command || $command !~ /^(?:start|stop|restart|status|logrot)$/ )
 {
